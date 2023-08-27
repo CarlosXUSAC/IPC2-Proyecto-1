@@ -1,56 +1,63 @@
-from dataclasses import dataclass
+from nodoFreq import NodoFreq
+from nodoSenal import NodoSenal
 
 
-@dataclass
-class Node:
-    value: int
-    nextNode: 'Node'
+def agregar_al_final(nodo_inicial, dato, tiempo, amplitud):
+    nuevo_nodo = NodoFreq(dato, tiempo, amplitud)
+    if nodo_inicial == None:
+        nodo_inicial = nuevo_nodo
+        return nodo_inicial
+    temporal = nodo_inicial
+    while temporal.siguiente:
+        temporal = temporal.siguiente
+    temporal.siguiente = nuevo_nodo
+    return nodo_inicial
 
 
-class LinkedList:
-    _size: int
-    _firstNode: Node
+def agregar_al_inicio(nodo_inicial, dato, tiempo, amplitud):
+    nuevo_nodo = NodoFreq(dato, tiempo, amplitud)
+    nuevo_nodo.siguiente = nodo_inicial
+    return nuevo_nodo
 
-    def __init__(self) -> None:
-        self._size = 0
-        self._firstNode = None
 
-    def add(self, position: int, element: int):
-        if position == 0:
-            self._firstNode = Node(value=element, nextNode=self._firstNode)
+def obtener_cabeza(nodo_inicial):
+    return nodo_inicial
 
-        else:
-            currentNode = self._firstNode
-            for _ in range(0, position - 1):
-                currentNode = currentNode.nextNode
-            currentNode.nextNode = Node(
-                value=element, nextNode=currentNode.nextNode)
-            
-        self._size += 1
+
+def obtener_cola(nodo_inicial):
+    temporal = nodo_inicial
+    while temporal.siguiente:
+        temporal = temporal.siguiente
+    return temporal
+
+
+def existe(nodo, busqueda):
+    while nodo != None:
+        if nodo.dato == busqueda:
+            return True
+        nodo = nodo.siguiente
+    return False
+
+
+def imprimir_lista(nodo):
+    while nodo != None:
+        print(f"[ {nodo.dato} ]", end="")
+        nodo = nodo.siguiente
+
+
+def main():
+    lista = None
+    lista = agregar_al_final(lista, 2, 1, 1)
+    lista = agregar_al_final(lista, 3, 1, 2)
+    lista = agregar_al_final(lista, 0, 1, 3)
+    lista = agregar_al_final(lista, 4, 1, 4)
+    print("Lista inicial")
+    imprimir_lista(lista)
+
+
+main()    
+
+
+
+
     
-    def delete(self, position: int):
-        if position == 0:
-            self._firstNode = self._firstNode.nextNode
-
-        else:
-            currentNode = self._firstNode
-            for _ in range(0, position - 1):
-                currentNode = currentNode.nextNode
-            currentNode.nextNode = currentNode.nextNode.nextNode
-
-        self._size -= 1
-
-    def get(self, position: int) -> int:
-        currentNode = self._firstNode
-        for _ in range(0, position):
-            currentNode = currentNode.nextNode
-        return currentNode.value
-    
-    def getSize(self) -> int:
-        return self._size
-    
-
-example = LinkedList()
-example.add(0, 1)
-example.add(0, 2)
-print(example.getSize())
