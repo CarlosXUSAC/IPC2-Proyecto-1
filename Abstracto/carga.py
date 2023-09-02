@@ -1,23 +1,41 @@
 import xml.etree.ElementTree as ET
+import graphviz as gv
 
 
-try:
-    xml_file = open('prueba2.xml')
+tree = ET.parse('testChat.xml')
+root = tree.getroot()
 
-    if xml_file.readable():        
-        xml_data = ET.fromstring(xml_file.read())
+cont = 0
+cont2 = 0
+cont3 = 0
 
-        lst_senal = xml_data.findall('senal')
-        print(f"Total de señales: {len(lst_senal)}")
-        for senal in lst_senal:
-            nodo1 = lst_senal.getElementByTagName('senal')[0]
-            print(f"nombre: {senal.firstChild.data}")
-            print("--------------------------------------------------")
 
-    else:
-        print(False)    
+print("Señales:")
+print("..................................................")
+for senal in root.findall('senal'):    
+    print(f'(',cont2+1,')  ',root[cont2].get('nombre'))
+    cont2 += 1
+print("..................................................")
+num = int(input("Ingrese el numero de la señal que desea procesar: "))
+num -= 1    
+print("")
 
-except Exception as err:
-    print('Error al abrir el archivo:', err)
-finally:
-    xml_file.close()
+
+nombre = root[num].get('nombre')
+tiempo = root[num].get('t')
+Amplitud = root[num].get('A')
+print("--------------------------------------------------")
+print(f'Elemento: Nombre={nombre}, tiempo={tiempo}, Amplitud={Amplitud}')
+print("--------------------------------------------------")
+
+rango = int(tiempo) * int(Amplitud)
+  
+for j in range(0, rango):
+    cont3 += 1
+    print(f"[  {root[num][j].text}  ]", end="")
+    if cont3 == int(Amplitud):            
+        print("")
+        cont3 = 0
+
+print("")
+        

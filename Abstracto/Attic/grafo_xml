@@ -1,0 +1,83 @@
+// Grafo XML
+digraph {
+	"dato
+t=1
+A=1
+"
+	"dato
+t=1
+A=2
+"
+	"dato
+t=1
+A=3
+"
+	"dato
+t=1
+A=4
+"
+	"dato
+t=2
+A=1
+"
+	"dato
+t=2
+A=2
+"
+	"dato
+t=2
+A=3
+"
+	"dato
+t=2
+A=4
+"
+	"dato
+t=3
+A=1
+"
+	"dato
+t=3
+A=2
+"
+	"dato
+t=3
+A=3
+"
+	"dato
+t=3
+A=4
+"
+	"dato
+t=4
+A=1
+"
+	"dato
+t=4
+A=2
+"
+	"dato
+t=4
+A=3
+"
+	"dato
+t=4
+A=4
+"
+	"dato
+t=5
+A=1
+"
+	"dato
+t=5
+A=2
+"
+	"dato
+t=5
+A=3
+"
+	"dato
+t=5
+A=4
+"
+}
