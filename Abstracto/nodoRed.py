@@ -1,13 +1,12 @@
-class NodoFreq():    
+class NodoRed():
     dato = None
     tiempo = None
     amplitud = None
-    siguiente = None    
+    siguiente = None
 
 
-    def __init__(self, dato, tiempo, amplitud):        
+    def __init__(self, dato, tiempo, amplitud):
         self.dato = dato
         self.tiempo = tiempo
         self.amplitud = amplitud
         self.siguiente = None
-        

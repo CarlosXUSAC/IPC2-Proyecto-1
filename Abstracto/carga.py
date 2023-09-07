@@ -2,7 +2,7 @@ import xml.etree.ElementTree as ET
 import graphviz as gv
 
 
-tree = ET.parse('testChat.xml')
+tree = ET.parse('ejemploEntrada.xml')
 root = tree.getroot()
 
 cont = 0
@@ -21,21 +21,41 @@ num -= 1
 print("")
 
 
-nombre = root[num].get('nombre')
-tiempo = root[num].get('t')
-Amplitud = root[num].get('A')
-print("--------------------------------------------------")
-print(f'Elemento: Nombre={nombre}, tiempo={tiempo}, Amplitud={Amplitud}')
-print("--------------------------------------------------")
+# nombre = root[num].get('nombre')
+# tiempo = root[num].get('t')
+# Amplitud = root[num].get('A')
+# print("------------------------------------------------------------")
+# print("\033[1;34m"+"M. Frecuencia "+'\033[0;m', end="")
+# print(f'| Nombre = {nombre}, tiempo = {tiempo}, Amplitud = {Amplitud}')
+# print("------------------------------------------------------------")
 
-rango = int(tiempo) * int(Amplitud)
+# rango = int(tiempo) * int(Amplitud)
   
-for j in range(0, rango):
-    cont3 += 1
-    print(f"[  {root[num][j].text}  ]", end="")
-    if cont3 == int(Amplitud):            
-        print("")
-        cont3 = 0
+# for j in range(0, rango):
+#     cont3 += 1
+#     print(f"[  {root[num][j].text}  ]", end="")
+#     if cont3 == int(Amplitud):            
+#         print("")
+#         cont3 = 0
 
-print("")
+# #print("")
+
+# print("------------------------------------------------------------")
+# print("\033[1;34m"+"M. Patrones "+'\033[0;m', end="")
+# print(f'| Nombre = {nombre}, tiempo = {tiempo}, Amplitud = {Amplitud}')
+# print("------------------------------------------------------------")
+
         
+# for j in range(0, rango):
+#     cont3 += 1
+#     if root[num][j].text != "0":
+#         print(f"[  1  ]", end="")
+#     else:
+#         print(f"[  0  ]", end="")
+#     #print(f"[  {root[num][j].text}  ]", end="")
+#     if cont3 == int(Amplitud):            
+#         print("")
+#         cont3 = 0
+
+# print("")
+

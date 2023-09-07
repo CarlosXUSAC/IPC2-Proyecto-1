@@ -1,0 +1,95 @@
+    def main(): 
+    listaRedu = NodoFreq
+    listaRedu = None
+    listaRedu2 = NodoFreq
+    listaRedu2 = None   
+    listaTemp, listaEnt = cargar_archivo()        
+    print("\n")    
+    cont = existe(listaTemp, "0")       
+    
+
+    listaEnt = listaEnt.siguiente
+    comp1 = math.trunc(cont * pow(10, -16))
+    print(comp1)
+    res1 = cont-(comp1 * pow(10, 16))
+
+    for i in range(0, 4):
+            listaRedu = agregar_al_final(listaRedu, listaEnt.dato, listaEnt.tiempo, listaEnt.amplitud)
+            listaEnt = listaEnt.siguiente          
+
+
+    for i in range(0, 4):
+        res2, comp2 = reducir(listaEnt, listaRedu, listaRedu2, res1, comp1, 12-4*i)
+        #print(res2, comp2)
+        res1 = res2
+        comp1 = comp2
+    
+    
+    # comp2 = math.trunc(res1 * pow(10, -12))
+    # print(comp2)
+    # res2 = res1-(comp2 * pow(10, 12))    
+
+    # if comp1 == comp2:
+    #     print("Son iguales")       
+    #     for i in range(0, 4):
+    #         listaRedu = agregar_al_final(listaRedu, listaRedu.dato+listaEnt.dato, listaRedu.tiempo+','+listaEnt.tiempo, listaRedu.amplitud+','+listaEnt.amplitud)            
+    #         listaEnt = listaEnt.siguiente
+    #         listaRedu = listaRedu.siguiente
+    # else:
+    #     for i in range(0, 4):
+    #         listaRedu2 = agregar_al_final(listaRedu2, listaEnt.dato, listaEnt.tiempo, listaEnt.amplitud)
+    #         listaEnt = listaEnt.siguiente               
+                    
+    # comp3 = math.trunc(res2 * pow(10, -8))
+    # print(comp3)
+    # res3 = res2-(comp3 * pow(10, 8))    
+
+    # if comp1 == comp3:
+    #     print("Son iguales")
+        
+    #     for i in range(0, 4):            
+    #         listaRedu = agregar_al_final(listaRedu, listaRedu.dato+listaEnt.dato, listaRedu.tiempo+','+listaEnt.tiempo, listaRedu.amplitud+','+listaEnt.amplitud)            
+    #         listaEnt = listaEnt.siguiente
+    #         listaRedu = listaRedu.siguiente
+    # else:
+    #     for i in range(0, 4):
+    #         listaRedu2 = agregar_al_final(listaRedu2, listaEnt.dato, listaEnt.tiempo, listaEnt.amplitud)
+    #         listaEnt = listaEnt.siguiente           
+
+    # comp4 = math.trunc(res3 * pow(10, -4))
+    # print(comp4)
+    # res4 = res3-(comp4 * pow(10, 4))    
+
+    # if comp1 == comp4:
+    #     print("Son iguales")
+
+    #     for i in range(0, 4):            
+    #         listaRedu = agregar_al_final(listaRedu, listaRedu.dato+listaEnt.dato, listaRedu.tiempo+','+listaEnt.tiempo, listaRedu.amplitud+','+listaEnt.amplitud)            
+    #         listaEnt = listaEnt.siguiente
+    #         listaRedu = listaRedu.siguiente
+    # else:
+    #     for i in range(0, 4):
+    #         listaRedu2 = agregar_al_final(listaRedu2, listaEnt.dato, listaEnt.tiempo, listaEnt.amplitud)
+    #         listaEnt = listaEnt.siguiente           
+
+
+    # comp5 = math.trunc(res4 * pow(10, 0))
+    # print(comp5)
+    # res5 = res4-(comp5 * pow(10, 0)) 
+
+    # if comp1 == comp5:
+    #     print("Son iguales")
+
+    #     for i in range(0, 4):            
+    #         listaRedu = agregar_al_final(listaRedu, listaRedu.dato+listaEnt.dato, listaRedu.tiempo+','+listaEnt.tiempo, listaRedu.amplitud+','+listaEnt.amplitud)            
+    #         listaEnt = listaEnt.siguiente
+    #         listaRedu = listaRedu.siguiente
+    # else:
+    #     for i in range(0, 4):
+    #         listaRedu2 = agregar_al_final(listaRedu2, listaEnt.dato, listaEnt.tiempo, listaEnt.amplitud)
+    #         listaEnt = listaEnt.siguiente           
+
+        
+    # imprimir_lista(listaRedu)
+    # print("\n")
+    # imprimir_lista(listaRedu2)
